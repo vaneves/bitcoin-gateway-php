@@ -21,3 +21,7 @@ mix.scripts([
 
 mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css');
+
+
+mix.copyDirectory(bower + 'font-awesome/fonts', 'public/fonts/vendor/font-awesome');
+mix.copyDirectory(bower + 'bootstrap-sass/assets/fonts/bootstrap', 'public/fonts/vendor/bootstrap-sass/bootstrap');

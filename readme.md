@@ -1,4 +1,4 @@
-# Payment via Bitcoin with Laravel
+# 🛒 Payment via Bitcoin with Laravel
 
 A payment gateway server for Bitcoin made with Laravel.
 
@@ -33,7 +33,7 @@ php artisan key:generate
 
 Edit `.env` file:
 
-```
+```text
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
@@ -61,19 +61,19 @@ php artisan migrate
 
 Installing npm dependencies:
 
-```
+```bash
 npm install
 ```
 
 Installing bower dependencies:
 
-```
+```bash
 bower install
 ```
 
 Building front-end:
 
-```
+```bash
 npm run production
 ```
 
@@ -81,12 +81,16 @@ npm run production
 
 ### Checkout
 
+Creating a simple checkout.
+
 #### Request
 
-```
+```text
 POST /api/checkout?email=MAIL&token=TOKEN HTTP/1.1
 Content-Type: application/json
 ```
+
+Body:
 
 ```javascript
 {
@@ -117,7 +121,11 @@ Content-Type: application/json
 
 ### Notification
 
-```
+Find notification by code.
+
+#### Request
+
+```text
 GET /api/notification/E1C4ECE6157720F15AC479631FE978C1?email=MAIL&token=TOKEN HTTP/1.1
 Content-Type: application/json
 
@@ -157,7 +165,11 @@ Content-Type: application/json
 
 ### Transaction
 
-```javascript
+Find transaction by code. *The transaction code is internal, from the application, not from the blockchain*.
+
+#### Request
+
+```text
 GET /api/transaction/E0D817967615B2940ECD78D6E37BD28F?email=MAIL&token=TOKEN HTTP/1.1
 Content-Type: application/json
 
@@ -197,7 +209,11 @@ Content-Type: application/json
 
 ### Transactions
 
-```javascript
+Listing transactions by date interval.
+
+#### Request
+
+```text
 GET /api/transactions?email=MAIL&token=TOKEN&start_date=2017-08-01T00:00&end_date=2018-08-31T23:00&page=1&max=10 HTTP/1.1
 Content-Type: application/json
 ```
@@ -367,3 +383,9 @@ Content-Type: application/json
 ## License
 
 The MIT License (MIT)
+
+## Donate
+
+Bitcoin address: **1H6ssXbPbLeDVQNf9PqaarTEeG9sjurEgm**
+
+<img src="https://chart.googleapis.com/chart?cht=qr&chs=230x230&chl=bitcoin:1H6ssXbPbLeDVQNf9PqaarTEeG9sjurEgm">
